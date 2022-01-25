@@ -1,7 +1,6 @@
 # Ranking-and-targeting
 Project of Clément MALVY and Pierre LE GALEZE
 
-
 ## Description of the database
 The database "data_avec_etiquettes.txt" contains 200 variables (V1...V200) and 494 021 observations.
 V200 is the target variable, it has 23 modalities.
