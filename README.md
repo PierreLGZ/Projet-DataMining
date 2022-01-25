@@ -1,56 +1,55 @@
 # Ranking-and-targeting
 
-## Descritpion de la base
-La base « data_avec_etiquettes.txt » comporte 200 variables (V1...V200) et 494 021 observations.
-V200 est la variable cible, elle comporte 23 modalités.
-V1...V199 sont les variables explicatives potentielles. Certaines sont qualitatives (V160, V161, V162), les autres sont quantitatives.
+## Description of the database
+The database "data_avec_etiquettes.txt" contains 200 variables (V1...V200) and 494 021 observations.
+V200 is the target variable, it has 23 modalities.
+V1...V199 are the potential explanatory variables. Some are qualitative (V160, V161, V162), the others are quantitative.
 
-## Objectifs de l'étude
-1. Produire un système de classement :
-  a. Qui permet de prédire le plus précisément possible les valeurs de la
-  variable cible V200.
-  b. Annoncer le nombre d’erreurs de classement si on appliquait votre modèle
-  sur une base de déploiement comportant 4 898 424 obs.
-2. Produire un système de « scoring » :
-  a. Qui permet de cibler la modalité « m16 » (les positifs) de V200
-  b. Annoncer le nombre de positifs parmi les 10 000 observations qui
-  présentent les scores les plus élevés dans une base de 4 898 424 obs.
-3. Construire une variable cible modifiée « V200_Prim » via le regroupement des modalités de « V200 » en argumentant votre démarche (nombre de groupes, constitution des groupes). Construire un modèle qui permet de prédire le plus précisément possible cette nouvelle variable cible « V200_Prim ».
+## Objectives of the study
+1. Produce a ranking system:
+  a. That most accurately predicts the values of the target
+  target variable V200.
+  b. State the number of misclassifications if your model were applied
+  on a deployment base with 4,898,424 obs.
+2. Produce a "scoring" system:
+  a. That targets the "m16" modality (the positives) of V200
+  b. Announce the number of positives among the 10,000 observations that
+  have the highest scores in a database of 4,898,424 obs.
+3. Construct a modified target variable "V200_Prim" via the grouping of the modalities of "V200" by arguing your approach (number of groups, constitution of groups). Construct a model that predicts this new target variable "V200_Prim" as accurately as possible.
 
-## Choix des méthodes et des outils
-Choix des méthodes à utiliser libre pourvu que :  
-a. Le modèle définitif peut s’exprimer à l’aide d’un système à base de
-règles s’appliquant sur les variables initiales du dataset.  
-b. (et/ou) Le modèle peut s’exprimer à l’aide d’une combinaison
-linéaire basée sur les variables initiales (ou codée 0/1 pour ce qui est des explicatives qualitatives).  
+## Choice of methods and tools
+Choice of methods to be used is free provided that :  
+a. The final model can be expressed using a rule-based system applied to the initial variables of the dataset.  
+b. (and/or) The model can be expressed using a linear combination based on
+based on the initial variables (or coded 0/1 for qualitative explanatory variables).  
 
-Dans tous les cas (objectifs 1, 2 et 3), je m’attends à ce que opériez une sélection de variables : seules sont conservées les variables pertinentes, et on dispose d’indications sur leur importance dans les modèles à déployer.  
-Choix des outils (logiciels) à utiliser libre pourvu qu’ils soient accessibles gratuitement et que je sois en capacité de reproduire vos calculs.
+In all cases (objectives 1, 2 and 3), I expect a selection of variables to be made: only relevant variables are kept, and there are indications of their importance in the models to be deployed.  
+Choice of tools (software) to be used is free as long as they are freely available and I am able to reproduce your calculations.
 
-## Livrables
-Un rapport retraçant votre démarche pour chaque objectif (1, 2 et 3). Un plan type serait d’adopter le mode de présentation préconisée par la méthodologie CRISP-DM, voir en particulier « The CRISP-DM outputs ». On doit bien identifier notamment pour chaque objectif :  
-a. quelles sont les approches que vous avez testées, comment vous avez identifié le modèle définitif ;  
-b. comment s’exprime le modèle définitif ;  
-c. quelles sont les variables intégrées dans le modèle définitif, avec un
-classement selon leur importance ;  
-d. comment avez-vous estimé les performances sur la base de déploiement ;  
-e. pour l’objectif (3), quelle est la stratégie adoptée pour procéder au
-regroupement des classes.  
+## Deliverables
+A report outlining your approach for each objective (1, 2 and 3). A typical plan would be to adopt the presentation mode recommended by the CRISP-DM methodology, see in particular "The CRISP-DM outputs". For each objective, it is important to identify :  
+a. which approaches you have tested, how you have identified the final model ;  
+b. how the final model is expressed;  
+c. which variables are included in the final model, with a ranking according to their
+c. what variables are included in the final model, with a ranking of their importance;  
+d. how did you estimate the performance based on the deployment?  
+e. for objective (3), what is the strategy adopted to perform the
+grouping of classes.  
 
-Un programme (R, Python ou autre) pour chaque objectif (1, 2 et 3) que l’on peut appliquer sur une base de déploiement (DB) au format texte avec séparateur tabulation de 4 898 424 obs. décrite exclusivement par les variables (V1... V199 ; les noms de variables sont en en-tête de chaque champ). Ils doivent :
-1. Prendre en entrée DB et produire une prédiction stockée dans un fichier texte nommé « predictions.txt » du répertoire courant.
-2. Prendre en entrée DB et produire le score d’appartenance à la classe
-« m16 » dans un fichier texte nommé « scores.txt » du répertoire courant.
-3. Prendre en entrée DB et un fichier « classes.txt » contenant les classes d’appartenance originelles (nom de variable : V200). Il doit effectuer le regroupement selon votre stratégie, effectuer la prédiction sur DB, et sauvegarder dans un fichier « sorties.txt » les prédictions et les classes regroupées.
+A program (R, Python, or other) for each objective (1, 2, and 3) that can be applied to a deployment base (DB) in text format with tab separator of 4,898,424 obs. described exclusively by variables (V1...V199; variable names are in the header of each field). They must:
+1. Take as input DB and produce a prediction stored in a text file named "predictions.txt" in the current directory.
+2. Take as input DB and produce the score of membership to the class
+"m16" in a text file named "scores.txt" in the current directory.
+3. Take as input DB and a file " classes.txt " containing the original membership classes (variable name : V200). It should perform the grouping according to your strategy, make the prediction on DB, and save the predictions and the grouped classes in a file named "outputs.txt".
 
-## Critères d'évaluation
-• Travail à faire en groupe de 3 étudiants max.  
-• Performances prédictives.  
-• Conformité des performances annoncées avec les performances effectivement
-mesurées durant la correction.  
-• Qualité et fiabilité des programmes de déploiement (attention, taille du fichier de
-déploiement ≈ 2GB, faites des essais en dupliquant la base à votre disposition).  
-• Argumentation des choix, positionnement des différentes alternatives, pertinence de la sélection de variables.  
-• Lisibilité des modèles prédictifs, identification des variables pertinentes.  
-• Qualité de rédaction du rapport (texte, tableaux, graphiques). Rédigez
-correctement (disons une 15-aine de pages max pour donner un ordre d’idées).  
+## Evaluation criteria
+- Work to be done in groups of 3 students max.  
+- Predictive performance.  
+- Conformity of the predicted performances with the performances actually measured
+measured during the correction.  
+- Quality and reliability of the deployment programs (attention, size of the
+deployment ≈ 2GB, make tests by duplicating the base at your disposal).  
+- Argumentation of choices, positioning of different alternatives, relevance of variable selection.  
+- Readability of predictive models, identification of relevant variables.  
+- Quality of report writing (text, tables, graphs). Write
+correctly (say 15 pages max to give an idea).  
