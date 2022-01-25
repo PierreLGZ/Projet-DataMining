@@ -1,12 +1,12 @@
 # Ranking-and-targeting
 
-    Descritpion de la base 
+## Descritpion de la base
 La base « data_avec_etiquettes.txt » comporte 200 variables (V1...V200) et 494 021 observations.
 V200 est la variable cible, elle comporte 23 modalités.
 V1...V199 sont les variables explicatives potentielles. Certaines sont qualitatives (V160, V161, V162), les autres sont quantitatives.
 
 
-    Objectifs de l'étude
+## Objectifs de l'étude
 1. Produire un système de classement :
   a. Qui permet de prédire le plus précisément possible les valeurs de la
   variable cible V200.
@@ -19,7 +19,7 @@ V1...V199 sont les variables explicatives potentielles. Certaines sont qualitati
 3. Construire une variable cible modifiée « V200_Prim » via le regroupement des modalités de « V200 » en argumentant votre démarche (nombre de groupes, constitution des groupes). Construire un modèle qui permet de prédire le plus précisément possible cette nouvelle variable cible « V200_Prim ».
 
 
-    Choix des méthodes et des outils
+## Choix des méthodes et des outils
 Choix des méthodes à utiliser libre pourvu que :
 a. Le modèle définitif peut s’exprimer à l’aide d’un système à base de
 règles s’appliquant sur les variables initiales du dataset
@@ -29,7 +29,7 @@ Dans tous les cas (objectifs 1, 2 et 3), je m’attends à ce que opériez une s
 Choix des outils (logiciels) à utiliser libre pourvu qu’ils soient accessibles gratuitement et que je sois en capacité de reproduire vos calculs.
 
 
-    Livrables
+## Livrables
 Un rapport retraçant votre démarche pour chaque objectif (1, 2 et 3). Un plan type serait d’adopter le mode de présentation préconisée par la méthodologie CRISP-DM, voir en particulier « The CRISP-DM outputs ». On doit bien identifier notamment pour chaque objectif :
 a. quelles sont les approches que vous avez testées, comment vous avez identifié le modèle définitif ;
 b. comment s’exprime le modèle définitif ;
@@ -46,7 +46,7 @@ Un programme (R, Python ou autre) pour chaque objectif (1, 2 et 3) que l’on pe
 3. Prendre en entrée DB et un fichier « classes.txt » contenant les classes d’appartenance originelles (nom de variable : V200). Il doit effectuer le regroupement selon votre stratégie, effectuer la prédiction sur DB, et sauvegarder dans un fichier « sorties.txt » les prédictions et les classes regroupées.
 
 
-Critères d'évaluation
+## Critères d'évaluation
 • Travail à faire en groupe de 3 étudiants max.
 • Performances prédictives
 • Conformité des performances annoncées avec les performances effectivement
